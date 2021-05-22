@@ -1,33 +1,37 @@
-/*jshint node:true*/
+<html lang="en-us">
+ <head>
+ <title>Welcome to Devops Learning!!</title>
+ <link rel="stylesheet" href="/built/css/default.css" />
+ <script src="/bower_components/angular/angular.js"></script>
+ <script src="/bower_components/angular-route/angularroute.js"></script>
+ <script src="/js/controllers.js"></script>
+ <style>
+ img {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ padding-top: 10%;
 
-var express = require("express");
-var bodyParser = require('body-parser');
-var apiv1 = require('./routes/apiv1.js');
-var EJS = require('ejs');
-
-EJS.open = "<ejs>";
-EJS.close = "</ejs>";
-
-var host = process.env.PORT ? '0.0.0.0' : 'localhost';
-var port = (process.env.PORT || 3456);
-var url = require('url').format({hostname: host, port: port, protocol: 'http'});
-
-var app = express();
-app.use(express.static('static'));
-app.set('view engine', 'ejs');
-
-app.use( bodyParser.json() ); 
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
-app.use('/api/v1/', apiv1.router);
-
-var http = require('http');
-var server = http.createServer(app);
-server.listen(port, function () {
-    console.log('Weather Report listening on ' + url);
-});
-
-app.get("/", function(req, res) {
-    return res.render('main');
-});
+}
+ marquee {
+ text-align:center;
+ }
+ </style>
+ </head>
+ <body>
+<center>
+<img src= "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcSE65xZ9tUWsRzustJpOZ1rWiA
+-veUSfL9mNNZG7-Y6Rqb2j5nz" alt="ibm_logo"width="200"
+height="150" >
+<br>
+</center>
+<marquee direction="up" behavior="slide"
+style="height:100px"><font size="150px"> WELCOME TO DEVOPS
+LEARNING </marquee>
+ </body>
+ <script>
+ angular.element(document).ready(function() {
+ angular.bootstrap(document, ['ConsoleModule']);
+ });
+ </script>
+</html>
